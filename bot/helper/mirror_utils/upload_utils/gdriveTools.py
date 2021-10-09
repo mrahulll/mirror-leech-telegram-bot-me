@@ -165,7 +165,7 @@ class GoogleDriveHelper:
         # File body description
         file_metadata = {
             'name': file_name,
-            'description': 'Uploaded by Mirror-leech-telegram-bot',
+            'description': 'Uploaded by Ciara',
             'mimeType': mime_type,
         }
         try:
@@ -480,7 +480,7 @@ class GoogleDriveHelper:
     def create_directory(self, directory_name, parent_id):
         file_metadata = {
             "name": directory_name,
-            "description": "Uploaded by Mirror-leech-telegram-bot",
+            "description": "Uploaded by Ciara",
             "mimeType": self.__G_DRIVE_DIR_MIME_TYPE
         }
         if parent_id is not None:
@@ -577,9 +577,9 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'Mirror-leech-bot Search',
-                                 author_name='Mirror-leech-bot',
-                                 author_url='https://github.com/anasty17/mirror-leech-telegram-bot',
+                                 title = 'M2D Search',
+                                 author_name='M2D',
+                                 author_url='https://t.me/m2dpublic',
                                  html_content=content)
         return
 
@@ -774,9 +774,9 @@ class GoogleDriveHelper:
 
         for content in self.telegraph_content :
             self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                    title = 'Mirror-leech-bot Search',
-                                                    author_name='Mirror-leech-bot',
-                                                    author_url='https://github.com/anasty17/mirror-leech-telegram-bot',
+                                                    title = 'M2D Search',
+                                                    author_name='M2D',
+                                                    author_url='https://t.me/m2dpublic',
                                                     html_content=content
                                                     )['path'])
 
