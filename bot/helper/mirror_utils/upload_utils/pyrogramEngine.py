@@ -9,7 +9,7 @@ import time
 from pyrogram.errors import FloodWait
 
 from bot import app, DOWNLOAD_DIR, AS_DOCUMENT, AS_DOC_USERS, AS_MEDIA_USERS, CUSTOM_FILENAME
-from bot.helper.ext_utils.fs_utils import take_ss, get_media_info, get_mime_type
+from bot.helper.ext_utils.fs_utils import take_ss, get_media_info
 
 LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
@@ -73,13 +73,10 @@ class TgUploader:
             cap_mono = f"<code>{filee}</code>"
         notMedia = False
         thumb = self.thumb
-        mime = get_mime_type(up_path)
-        ftype = mime.split("/")[0]
-        ftype = ftype.lower().strip()
         try:
             if not self.as_doc:
                 duration = 0
-                if filee.upper().endswith(VIDEO_SUFFIXES) or ftype == "video":
+                if filee.upper().endswith(VIDEO_SUFFIXES):
                     duration = get_media_info(up_path)[0]
                     if thumb is None:
                         thumb = take_ss(up_path)
@@ -102,7 +99,7 @@ class TgUploader:
                                                               supports_streaming=True,
                                                               disable_notification=True,
                                                               progress=self.upload_progress)
-                elif filee.upper().endswith(AUDIO_SUFFIXES) or ftype == "audio":
+                elif filee.upper().endswith(AUDIO_SUFFIXES):
                     duration , artist, title = get_media_info(up_path)
                     self.sent_msg = self.sent_msg.reply_audio(audio=up_path,
                                                               quote=True,
@@ -114,7 +111,7 @@ class TgUploader:
                                                               thumb=thumb,
                                                               disable_notification=True,
                                                               progress=self.upload_progress)
-                elif filee.upper().endswith(IMAGE_SUFFIXES) or ftype == "image":
+                elif filee.upper().endswith(IMAGE_SUFFIXES):
                     self.sent_msg = self.sent_msg.reply_photo(photo=up_path,
                                                               quote=True,
                                                               caption=cap_mono,
