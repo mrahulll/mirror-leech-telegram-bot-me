@@ -28,6 +28,6 @@ speedtest-cli
 telegraph
 tenacity
 TgCrypto
-torrentool==1.1.0
+torrentool
 urllib3
 youtube_dl
