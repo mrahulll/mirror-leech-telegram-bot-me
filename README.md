@@ -131,7 +131,7 @@ Fill up rest of the fields. Meaning of each field is discussed below:
 ### Optional Field
 - `ACCOUNTS_ZIP_URL`: Only if you want to load your Service Account externally from an Index Link. Archive the accounts folder to a zip file. Fill this with the direct link of that file.
 - `TOKEN_PICKLE_URL`: Only if you want to load your **token.pickle** externally from an Index Link. Fill this with the direct link of that file.
-- `MULTI_SEARCH_URL`: Check `drive_folder` setup [here](https://github.com/anasty17/mirror-leech-telegram-bot/tree/master#multi-search-ids). Upload `drive_folder` file [here](https://gist.github.com/). Open the raw file of that gist, it's URL will be your required variable.
+- `MULTI_SEARCH_URL`: Check `drive_folder` setup [here](https://github.com/anasty17/mirror-leech-telegram-bot# Multi search IDs). Upload `drive_folder` file [here](https://gist.github.com/). Open the raw file of that gist, it's URL will be your required variable.
 - `DATABASE_URL`: Your Database URL. See [Generate Database](https://github.com/anasty17/mirror-leech-telegram-bot/tree/master#generate-database) to generate database (**NOTE**: If you use database you can save your Sudo ID permanently using `/addsudo` command).
 - `AUTHORIZED_CHATS`: Fill user_id and chat_id (not username) of groups/users you want to authorize. Separate them with space, Examples: `-0123456789 -1122334455 6915401739`.
 - `SUDO_USERS`: Fill user_id (not username) of users whom you want to give sudo permission. Separate them with space, Examples: `0123456789 1122334455 6915401739` (**NOTE**: If you want to save Sudo ID permanently without database, you must fill your Sudo Id here).
@@ -356,10 +356,9 @@ python3 add_to_team_drive.py -d SharedTeamDriveSrcID
 ```
 
 # Multi Search IDs
-To use list from multi TD/folder. Run driveid.py in your terminal, it will generate **drive_folder** file when you finish or u can simply create `drive_folder` file in working directory and fill it manually (easier), check below format:
+To use list from multi TD/folder. Run driveid.py in your terminal and follow it. It will generate a file **drive_folder** when you finish or u can simply create `drive_folder` file in working directory and fill, check below format:
 ```
 MyTdName folderID/tdID IndexLink(if available)
-MyTdName2 folderID/tdID IndexLink(if available)
 ```
 
 # Youtube-dl and Index Authentication Using .netrc File
@@ -372,4 +371,3 @@ For Index Link with only password without username, even http auth will not work
 machine example.workers.dev password index_password
 ```
 Where host is the name of extractor (eg. Youtube, Twitch). Multiple accounts of different hosts can be added each separated by a new line.
-
