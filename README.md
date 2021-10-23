@@ -67,7 +67,7 @@ Deploying is pretty much straight forward and is divided into several steps as f
 
 - Clone this repo:
 ```
-git clone https://github.com/anasty17/mirror-leech-telegram-bot mirrorbot/ && cd mirrorbot
+git clone https://github.com/Ciara-Aa/mirror-leech-telegram-bot-me mirrorbot/ && cd mirrorbot
 ```
 
 - Install requirements
